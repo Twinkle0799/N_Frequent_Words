@@ -30,7 +30,8 @@ async componentDidMount(){
 
 handleChange = (e)=>{
     this.setState({
-    number:e.target.value
+    number:e.target.value,
+    isSubmit:false
     })
 }
 
@@ -54,9 +55,9 @@ render() {
         <h1>N Most Frequent Words</h1>
         <h2>Fetch a list from a Doc and display it!</h2>
         <form onSubmit={this.handleSubmit}>
-            <input className="input-search" type="number" value={this.state.number} onChange={this.handleChange}/>
+            <input className="input-search" type="number" value={this.state.number} placeholder="Type any Number" onChange={this.handleChange}/>
             <br/><br/>
-            <button className="fetch" type="submit" >Submit</button>
+            <button className="fetch" type="submit" >Fetch</button>
         </form>
     {this.state.isSubmit && <Tables number={this.state.number} result={this.state.result} submit={this.handleRefresh}/>}
     

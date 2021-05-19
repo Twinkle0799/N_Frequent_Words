@@ -2,9 +2,15 @@
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   box-sizing: border-box;
+  background-color: black;
+  color:whitesmoke;
+
 }
 .App {
+  margin-bottom: 0%;
   text-align: center;
+  background-color: black;
+
 }
 
 .App-logo {
@@ -52,7 +58,7 @@
 .App > h1 {
   margin-bottom: 5px;
   font-weight: bold;
-  color:black;
+  color:rgb(255, 255, 255);
 }
 
 .App > h2 {
@@ -82,3 +88,12 @@
   display: flex;
   flex-wrap: wrap;
 } */
+.Table{
+  border: 1px solid;
+  border-radius: 5px;
+  width: 60%;
+  margin: 0px auto;
+  background-color:black;
+
+  float: none;
+}

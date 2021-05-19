@@ -26,8 +26,8 @@ export default class Tables extends Component {
         let n=0;
         
         return (
-            <section className="table">
-                <Table striped bordered hover responsive>
+            <section className="Table">
+                <Table striped bordered hover responsive >
                     <thead>
                         <tr>
                             <th>Words</th>
