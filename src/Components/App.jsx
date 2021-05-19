@@ -3,6 +3,7 @@ import axios from "axios";
 import Tables from "./Table";
 import "../App.css";
 
+const URL = "https://raw.githubusercontent.com/invictustech/test/main/README.md";
 export default class App extends React.Component {
 state = {
     number : 0,
@@ -10,20 +11,20 @@ state = {
     isSubmit:false
 }
 async componentDidMount(){
-    const res = await axios.get("https://raw.githubusercontent.com/invictustech/test/main/README.md")
+    const res = await axios.get(URL)
     const Words = res.data.split(/[-:;,— .\r\n|\r|\n]+/);
-    let dataToRender = new Map();
+    const DataRender = new Map();
     for(let i=0;i<Words.length;i++){
-    if(dataToRender.has(Words[i])){
-        dataToRender.set(Words[i],dataToRender.get(Words[i])+1);
+    if(DataRender.has(Words[i])){
+        DataRender.set(Words[i],DataRender.get(Words[i])+1);
     }
     else{
-        dataToRender.set(Words[i],1);
+        DataRender.set(Words[i],1);
     }
     }
-    let dataToRender1 = new Map([...dataToRender].sort((a, b) => String(b[1]).localeCompare(a[1])));
+    const Result = new Map([...DataRender].sort((a, b) => String(b[1]).localeCompare(a[1])));
     this.setState({
-    result: dataToRender1
+    result: Result
     })
 }
 
